@@ -1,0 +1,130 @@
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts-3by.pages.dev/poppins-v21-latin/poppins-v21-latin-regular.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("https://fonts-3by.pages.dev/poppins-v21-latin/poppins-v21-latin-500.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://fonts-3by.pages.dev/poppins-v21-latin/poppins-v21-latin-600.woff2")
+    format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("https://fonts-3by.pages.dev/poppins-v21-latin/poppins-v21-latin-700.woff2")
+    format("woff2");
+}
+
+:root {
+    /* Colors */
+    --color-error-background: hsl(0, 100%, 74%);
+    --color-submit-button: hsl(154, 59%, 51%);
+    --color-highlight: hsl(248, 32%, 49%);
+    --color-dark-text: hsl(249, 10%, 26%);
+    --color-light-text: hsl(246, 25%, 77%);
+
+    /* Font  */
+    /* Font family */
+    --font-family: "Poppins";
+    
+    /* Font Size */
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family), sans-serif;
+  background-image: url(../images/bg-intro-desktop.png);
+  background-color: var(--color-error-background);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    margin: 50px 200px;
+    height: 85dvh;
+    gap: 50px;
+}
+
+.intro-text{
+
+}
+.offer-form{
+
+}
+
+
