@@ -9,6 +9,8 @@
       href="./images/favicon-32x32.png">
 
     <link rel="stylesheet" href="./styles/component.css">  
+    <link rel="preload" href="your-font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <script defer src="./script/claim-trial.js"></script>
 
     <title>Frontend Mentor | Intro component with sign up form</title>
 
@@ -26,33 +28,54 @@
       </section>
       <section class="offer-form">
         <div class="offer-block">
-          Try it free 7 days then $20/mo. thereafter
+          Try it free 7 days <span class="offertext-light-color">then $20/mo.thereafter</span>
         </div>
         <form action>
 
-          <input type="text" name="firstname" id="firstname"
+          <div class="inputs">
+            <input type="text" name="firstname" id="firstname"
             autocapitalize="characters" placeholder="Enter your Firstname"
             required autofocus>
-
+          <p class="error" data-erroron="firstname"><em>Firstname can't be empty</em></p>
           <input type="text" name="lastname" id="lastname"
             autocapitalize="characters" placeholder="Enter your Lastname"
             required>
-
+          <p class="error" data-erroron="lastname"><em>Lastname can't be empty</em></p>
           <input type="email" name="email" id="email"
             placeholder="Enter you Email" required>
 
+          <p class="error" data-erroron="Email"><em>Email can't be empty</em></p>  
+
           <input type="password" name="password" id="password"
             placeholder="Enter your Password">
+          
+            <p class="error" data-erroron="Password"><em>Password can't be empty</em></p>  
+          </div>
 
           <div class="sumbit-bottomtext">
-            <button type="submit"> Claim your free trial </button>
+            <button type="submit" class="btn btn-submit"> Claim your free trial </button>
 
             <p class="bottom-text">By clicking the button, you are agreeing to
-              our Terms and Services</p>
+              our <a href="#" target="_blank" rel="noopener noreferrer" class="terms-services">Terms and Services</a> </p>
+                        
           </div>
         </form>
       </section>
     </main>
 
+    <div class="thank-you-component">
+      <div class="thank-you-banner">
+        <h1 class="title">Thank You!</h1>
+        <p class="success-msg">Your free trial has been successfully activated.</p>
+      </div>
+      <div class="thank-you-details">
+        <p>We hope you enjoy exploring our product. Feel free to reach out if you need any assistance.</p>
+      </div>
+      <div class="thank-you-actions">
+        <a  href="/dashboard" class="btn-primary btn">Go to Dashboard</a>
+        <a href="/support" class="btn-secondary btn">Contact Support</a>
+      </div>
+    </div>
+    
   </body>
 </html>
