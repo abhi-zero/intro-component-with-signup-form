@@ -183,12 +183,37 @@ input{
   line-height: 2.5;
   font-size: clamp(1rem, 1.7vw, 1.3rem);
   color: var(--color-form-dark-text);
-  outline-color: var(--color-highlight);
   caret-color: var(--color-highlight);
   background-color: inherit;
   border-radius: 5px;
+  outline-color:var(--color-highlight) ;
   border: 1px solid var(--color-form-light-text);
+  transition: all .3s ease-in;
 }
+
+ /* validation */
+
+input:valid:not(:placeholder-shown){
+  border: 1px solid var(--color-highlight);
+}
+
+input:invalid:not(:placeholder-shown){
+  border: 1px solid var(--color-error-background);
+  background-image: url(../images/icon-error.svg);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px);
+}
+
+input:invalid:not(:placeholder-shown) + .error{
+  color:var(--color-error-background);
+}
+
+input:invalid ~ button[type="submit"]{
+  visibility: hidden;
+  pointer-events: none;
+}
+
 
 .error{
   color: var(--color-primary-text);

@@ -37,19 +37,21 @@
             autocapitalize="characters" placeholder="Enter your Firstname"
             required autofocus>
           <p class="error" data-erroron="firstname"><em>Firstname can't be empty</em></p>
+
           <input type="text" name="lastname" id="lastname"
             autocapitalize="characters" placeholder="Enter your Lastname"
             required>
           <p class="error" data-erroron="lastname"><em>Lastname can't be empty</em></p>
+
           <input type="email" name="email" id="email"
             placeholder="Enter you Email" required>
 
           <p class="error" data-erroron="Email"><em>Email can't be empty</em></p>  
 
-          <input type="password" name="password" id="password"
-            placeholder="Enter your Password">
+          <input type="text" name="password" id="password"
+            placeholder="Enter your Password" minlength="6">
           
-            <p class="error" data-erroron="Password"><em>Password can't be empty</em></p>  
+            <p class="error" data-erroron="Password"><em>Password must be atleast 6 characters</em></p>  
           </div>
 
           <div class="sumbit-bottomtext">
