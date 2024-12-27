@@ -1,3 +1,4 @@
+/* component.css */
 @font-face {
   font-display: swap;
   font-family: "Poppins";
@@ -46,8 +47,8 @@
   --font-family: "Poppins";
 
   /* Font Size */
-  --font-size-base: 16px;
-  --font-size-small: 14px;
+  --font-size-base: 1rem;
+  --font-size-small: 0.875rem;
 }
 
 *,
@@ -116,7 +117,7 @@ h6 {
   padding: 10px;
   border-radius: 10px;
   font-weight: 600;
-  word-spacing: 1px;
+  word-spacing: 0.0625rem;
   cursor: pointer;
   margin-block:5px ;
   transition: all 0.3s ease-in-out;
@@ -127,7 +128,6 @@ a{
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* grid-template-rows: 700px; */
   width:65% ;
   margin: 100px auto;
   gap: 50px;
@@ -146,15 +146,15 @@ a{
 
 }
 .intro-text .description{
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 500;
 }
 
 .offer-form{
   display: grid;
-  grid-template-rows:.5fr 5fr;
+  grid-template-rows:0.5fr 5fr;
   gap: 20px;
-  /* align-content: center; */
+
 }
 .offer-form .offer-block{
   background-color: var(--color-highlight);
@@ -188,38 +188,46 @@ input{
   border-radius: 5px;
   outline-color:var(--color-highlight) ;
   border: 1px solid var(--color-form-light-text);
-  transition: all .3s ease-in;
+  transition: border-color 0.3s ease;
 }
 
  /* validation */
+ input:focus {
+  border-color: var(--color-highlight);
+  box-shadow: 0 0 0 0.125rem rgba(87, 87, 221, 0.1);
+}
 
 input:valid:not(:placeholder-shown){
-  border: 1px solid var(--color-highlight);
+  border-color:  var(--color-highlight);
 }
 
 input:invalid:not(:placeholder-shown){
-  border: 1px solid var(--color-error-background);
+  border: var(--color-error-background);
   background-image: url(../images/icon-error.svg);
   background-size: 20px;
   background-repeat: no-repeat;
-  background-position: calc(100% - 20px);
+  background-position: 95%;
 }
 
 input:invalid:not(:placeholder-shown) + .error{
+  opacity: 1;
   color:var(--color-error-background);
 }
 
 input:invalid ~ button[type="submit"]{
-  visibility: hidden;
+  opacity: 0.6; ;
   pointer-events: none;
+  cursor:not-allowed;
 }
 
 
 .error{
-  color: var(--color-primary-text);
+  opacity: 0;
+  color: var(--color-error-background);
   margin-block: 5px;
   font-size: 10px;
   text-align: right;
+  transition: all .2s ease-in;
 }
 
 .btn-submit{
@@ -244,7 +252,9 @@ input:invalid ~ button[type="submit"]{
   color: var(--color-error-background);
   font-weight: 600;
 }
-
+.bottom-text .terms-services:hover {
+  text-decoration: underline;
+}
 /* Thanks component  */
 
 .thank-you-component{
@@ -285,6 +295,7 @@ input:invalid ~ button[type="submit"]{
 .btn-secondary{
   color: var(--color-form-dark-text);
   border:2px solid var(--color-form-dark-text) ;
+  background-color: transparent;
 }
 
 /* Media Queries */
@@ -294,16 +305,27 @@ input:invalid ~ button[type="submit"]{
   .wrapper {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+    width: 80%;
+    margin: 3.125rem auto;
   }
 
   input{
     font-size: 1rem
+  }
+
+  .intro-text {
+    text-align: center;
   }
 }
 
 @media (max-width: 450px){
   .wrapper{
     grid-template-rows: .5fr 1fr;
-    width: 80%;
+    width: 90%;
+    margin: 1.875rem auto;
+  }
+
+  .offer-form form {
+    padding: 1.25rem;
   }
 }
