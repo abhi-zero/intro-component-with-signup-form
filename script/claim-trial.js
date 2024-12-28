@@ -9,6 +9,7 @@ const lastName = document.querySelector("#lastname");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 
+
 // Form
 const form = document.querySelector("form");
 
@@ -116,4 +117,12 @@ function validatePassword(passwordValue) {
     goToDashboard.addEventListener("click", () => {
       mainComponent.style.display = "grid";
       thanksComponent.style.display = "none";
+      if (form) {
+        form.reset();
+         // Manually reset any error messages or custom states
+    const errorMessages = document.querySelectorAll(".error");
+    errorMessages.forEach((error) => {
+      error.style.display = "none"; // Hide all error messages
+    });
+      } 
     });
