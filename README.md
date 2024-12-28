@@ -10,7 +10,7 @@ The validation process relied heavily on a combination of HTML and CSS for initi
 
 ### Problems Encountered
 
-During the CLAIM TRIAL project, I encountered several challenges while implementing the validation form. Initially, I thought I would need to use only JavaScript for validation. However, after reviewing the HTML and CSS, I discovered errors in the CSS `:not(:valid)` pseudo-class. I fixed these issues and successfully utilized a combination of JavaScript, HTML, and CSS for the final validation process.
+During the CLAIM TRIAL project, I encountered several challenges while implementing the validation form.I thought I would need to use only JavaScript for validation. However, after reviewing the HTML and CSS, I discovered errors in the CSS `:not(:valid)` pseudo-class. I fixed these issues and successfully utilized a combination of JavaScript, HTML, and CSS for the final validation process.
 
 To further enhance the validation process, I implemented additional JavaScript logic to improve accuracy. By combining these elements, I successfully created a robust validation form.
 
