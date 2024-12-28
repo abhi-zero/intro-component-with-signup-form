@@ -12,6 +12,11 @@ const password = document.querySelector("#password");
 // Form
 const form = document.querySelector("form");
 
+//button
+
+const submitBtn = document.querySelector(".btn-submit");
+const goToDashboard = document.querySelector(".btn-primary")
+
 //Error message
 //Firstname
 const paraFirstname = document.querySelector('p[data-erroron="firstname"]');
@@ -31,23 +36,24 @@ firstName.addEventListener("input", () => validateFirstname(firstName.value));
 lastName.addEventListener("input", () => validateLastname(lastName.value));
 email.addEventListener("input", () => validateEmail(email.value));
 password.addEventListener("input", () => validatePassword(password.value));
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  
+submitBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     let isValid = true;
 
     if (!validateFirstname(firstName.value)) {
       isValid = false;
     }
+    console.log(isValid);
+    
 
     if (!validateLastname(lastName.value)) {
       isValid = false;
     }
-
+    console.log(isValid);
     if (!validateEmail(email.value)) {
       isValid = false;
     }
-
+    console.log(isValid);
     if (isValid) {
       mainComponent.style.display = "none";
       thanksComponent.style.display = "grid";
@@ -57,53 +63,57 @@ form.addEventListener("submit", (e) => {
 function validateFirstname(firstnameValue) {
   if(firstnameValue.length < 2){
     errorFirstnameText.textContent = paraFirstname.getAttribute("data-default");
-    paraFirstname.style.opacity = "1";
+    paraFirstname.style.display = "block";
     return false;
   }
-  if (firstnameValue.includes(" ")) {
-    errorFirstnameText.textContent = "Firstname cannot contain spaces";
-    paraFirstname.style.opacity = "1";
-    return false;
-  } 
-  paraFirstname.style.opacity = "0";
+  paraFirstname.style.display = "none";
   return true;
 }
 function validateLastname(lastnameValue) {
   if (lastnameValue.length < 2) {
     errorLastnameText.textContent = paraLastname.getAttribute("data-default");
-    paraLastname.style.opacity = "1";
+    paraLastname.style.display = "block";
     return false;
   }
-  if (lastnameValue.includes(" ")) {
-    errorLastnameText.textContent = "Lastname cannot contain spaces";
-    paraLastname.style.opacity = "1";
-    return false;
-  } 
-  paraLastname.style.opacity = "0";
+  paraLastname.style.display = "none";
   return true;
 }
 function validateEmail(emailValue) {
+  let value = emailValue.trim();
+  if(value.includes(" ")){
+    errorEmailText.textContent = "Email cannot contain spaces";
+    paraEmail.style.display = "block";
+    return false;
+  }
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(emailValue)) {
     errorEmailText.innerHTML = `Please enter a valid email address, such as <strong>example@example.com</strong>.`;
-    paraEmail.style.opacity = "1";
+    paraEmail.style.display = "block";
     return false;
   } 
-  paraEmail.style.opacity = "0";
+  paraEmail.style.display = "none";
   return true;
 }
 
 function validatePassword(passwordValue) {
   if (passwordValue.length < 6) {
     errorPasswordText.textContent = paraPassword.getAttribute("data-default");
-    paraPassword.style.opacity = "1";
+    paraPassword.style.display = "block";
     return false;
   }
   if(passwordValue.includes(" ")){
     errorPasswordText.textContent = "Password cannot contain spaces";
-    paraPassword.style.opacity = "1";
+    paraPassword.style.display = "block";
     return false;
   }
-  paraPassword.style.opacity = "0";
+  paraPassword.style.display = "none";
   return true;
 }
+
+
+// thansks component buttons 
+
+    goToDashboard.addEventListener("click", () => {
+      mainComponent.style.display = "grid";
+      thanksComponent.style.display = "none";
+    });

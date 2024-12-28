@@ -35,33 +35,41 @@
         <form action="" novalidate>
 
           <div class="inputs">
-            <input type="text" name="firstname" id="firstname"
+            <div class="seprated-input">
+              <input type="text" name="firstname" id="firstname"
               autocapitalize="characters" placeholder="Enter your Firstname"
-              required autofocus minlength="2">
+              required autofocus >
             <p id="firstname-error" class="error" data-erroron="firstname"
               data-default="Firstname must be at least 2 characters long"><em>Firstname
                 must be at least 2 characters long</em>
             </p>
+            </div>
 
-            <input type="text" name="lastname" id="lastname"
+            <div class="seprated-input">
+              <input type="text" name="lastname" id="lastname"
               autocapitalize="characters" placeholder="Enter your Lastname"
-              required minlength="2">
+              required >
             <p id="lastname-error" class="error" data-erroron="lastname"
               data-default="Lastname  be at least 2 characters long"><em>Lastname
                 must be at least 2 characters long</em></p>
+            </div>
 
+           <div class="seprated-input">
             <input type="email" name="email" id="email"
-              placeholder="Enter you Email" required>
+            placeholder="Enter you Email" required>
 
-            <p id="email-error" class="error" data-erroron="email"
-              data-default="Please enter a valid email address"><em>Please enter a valid email address</em></p>
+          <p id="email-error" class="error" data-erroron="email"
+            data-default="Please enter a valid email address"><em>Please enter a valid email address</em></p>
+           </div>
 
-            <input type="password" name="password" id="password"
+            <div class="seprated-input">
+              <input type="text" name="password" id="password"
               placeholder="Enter your Password" minlength="6">
 
-            <p id="password-error" class="error" data-erroron="Password"
+            <p id="password-error" class="error" data-erroron="password"
               data-default="Password must be atleast 6 characters"><em>Password
                 must be atleast 6 characters</em></p>
+              </div>
           </div>
 
           <div class="submit-bottomtext">
@@ -88,7 +96,7 @@
           you need any assistance.</p>
       </div>
       <div class="thank-you-actions">
-        <a href="/dashboard" class="btn-primary btn">Go to Dashboard</a>
+        <a href="#" class="btn-primary btn">Go to Dashboard</a>
         <a href="/support" class="btn-secondary btn">Contact Support</a>
       </div>
     </div>
